@@ -1,0 +1,260 @@
+﻿# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * boostdoo_command_palette
+#
+# Copyright 2026 Boostdoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-15 00:00+0000\n"
+"PO-Revision-Date: 2026-03-15 00:00+0000\n"
+"Last-Translator: Boostdoo <info@boostdoo.com>\n"
+"Language-Team: Boostdoo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+#. module: boostdoo_command_palette
+#: model:ir.model,name:boostdoo_command_palette.model_boostdoo_command_favorite
+msgid "Boostdoo Command Palette Favorites"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model,name:boostdoo_command_palette.model_boostdoo_command_history
+msgid "Boostdoo Command Palette History"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model,name:boostdoo_command_palette.model_boostdoo_command_custom
+msgid "Boostdoo Command Custom"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_favorite__name
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__name
+msgid "Name"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_favorite__command_key
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_history__command_key
+msgid "Command Key"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_favorite__user_id
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_history__user_id
+msgid "User"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_favorite__sequence
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_history__command_name
+msgid "Command Name"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_history__last_used
+msgid "Last Used"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_history__use_count
+msgid "Use Count"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__description
+msgid "Description"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__action_id
+msgid "Action"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__shortcut
+msgid "Shortcut"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__group_ids
+msgid "Access Groups"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__active
+msgid "Active"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.model.fields,field_description:boostdoo_command_palette.field_boostdoo_command_custom__company_id
+msgid "Company"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Custom Command"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "General"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Settings"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Command name..."
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "e.g. ctrl+shift+p"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.actions.act_window,name:boostdoo_command_palette.action_boostdoo_command_custom
+#: model:ir.ui.menu,name:boostdoo_command_palette.menu_boostdoo_command_custom
+msgid "Custom Commands"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.actions.act_window,name:boostdoo_command_palette.action_boostdoo_command_history
+#: model:ir.ui.menu,name:boostdoo_command_palette.menu_boostdoo_command_history
+msgid "Command History"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "No custom commands yet"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Create custom commands to extend the Boostdoo Command Palette with your own shortcuts and actions."
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "No command history yet"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Command usage history will appear here once users start using the Boostdoo Command Palette."
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Search Custom Commands"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Command"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Archived"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "My Company"
+msgstr ""
+
+#. module: boostdoo_command_palette
+msgid "Group By"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.ui.menu,name:boostdoo_command_palette.menu_boostdoo_root
+msgid "Boostdoo"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.ui.menu,name:boostdoo_command_palette.menu_boostdoo_command_palette
+msgid "Command Palette"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.ui.menu,name:boostdoo_command_palette.menu_boostdoo_command_palette_config
+msgid "Configuration"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.ui.menu,name:boostdoo_command_palette.menu_boostdoo_command_palette_reporting
+msgid "Reporting"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:res.groups,name:boostdoo_command_palette.group_boostdoo_command_palette_user
+msgid "Command Palette User"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:res.groups,name:boostdoo_command_palette.group_boostdoo_command_palette_manager
+msgid "Command Palette Manager"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.rule,name:boostdoo_command_palette.rule_command_favorite_own
+msgid "Command Favorite: own records only"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.rule,name:boostdoo_command_palette.rule_command_history_own
+msgid "Command History: own records only"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#: model:ir.cron,name:boostdoo_command_palette.cron_boostdoo_command_palette_cleanup
+msgid "Boostdoo Command Palette: Clean Up Old History"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.js
+msgid "Favorite"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.js
+msgid "Recent"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.js
+msgid "Record"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.js
+msgid "Menu"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.js
+msgid "Custom"
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.xml
+msgid "Search commands, menus, actions..."
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. code: command_palette_extension.xml
+msgid "Start typing to search..."
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. sql_constraint: boostdoo.command.favorite
+msgid "Unique name required per user."
+msgstr ""
+
+#. module: boostdoo_command_palette
+#. sql_constraint: boostdoo.command.history
+msgid "Command history entry must be unique per user."
+msgstr ""

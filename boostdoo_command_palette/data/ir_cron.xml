@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Boostdoo Command Palette — Scheduled Actions ===== -->
+
+    <record id="cron_boostdoo_command_palette_cleanup" model="ir.cron">
+        <field name="name">Boostdoo Command Palette: Clean Up Old History</field>
+        <field name="model_id" ref="model_boostdoo_command_history"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_cleanup_history()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active" eval="True"/>
+        <field name="user_id" ref="base.user_root"/>
+    </record>
+
+</odoo>

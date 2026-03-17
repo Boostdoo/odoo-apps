@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Boostdoo Root Menu ===== -->
+    <menuitem id="menu_boostdoo_root"
+              name="Command Tools"
+              web_icon="boostdoo_command_palette,static/description/menuitem.png"
+              sequence="99"/>
+
+    <!-- ===== Boostdoo Command Palette — Sub-menu ===== -->
+    <menuitem id="menu_boostdoo_command_palette"
+              name="Command Palette"
+              parent="menu_boostdoo_root"
+              sequence="10"/>
+
+    <!-- ===== Configuration ===== -->
+    <menuitem id="menu_boostdoo_command_palette_config"
+              name="Configuration"
+              parent="menu_boostdoo_command_palette"
+              sequence="90"/>
+
+    <menuitem id="menu_boostdoo_command_custom"
+              name="Custom Commands"
+              parent="menu_boostdoo_command_palette_config"
+              action="action_boostdoo_command_custom"
+              sequence="10"
+              groups="base.group_system"/>
+
+    <!-- ===== Reporting ===== -->
+    <menuitem id="menu_boostdoo_command_palette_reporting"
+              name="Reporting"
+              parent="menu_boostdoo_command_palette"
+              sequence="80"
+              groups="base.group_system"/>
+
+    <menuitem id="menu_boostdoo_command_history"
+              name="Command History"
+              parent="menu_boostdoo_command_palette_reporting"
+              action="action_boostdoo_command_history"
+              sequence="10"
+              groups="base.group_system"/>
+
+</odoo>

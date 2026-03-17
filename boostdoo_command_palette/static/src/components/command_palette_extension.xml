@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="boostdoo_command_palette.CommandPaletteExtension">
+        <!-- Global keyboard listener is set up in JS; the overlay is rendered here -->
+        <t t-if="state.open">
+            <!-- Backdrop -->
+            <div class="boostdoo-cp-backdrop" t-on-click="_closePalette"/>
+
+            <!-- Palette container -->
+            <div class="boostdoo-cp-container" role="dialog" aria-modal="true"
+                 aria-label="Command Palette">
+
+                <!-- Header / search input -->
+                <div class="boostdoo-cp-header">
+                    <span class="boostdoo-cp-icon fa fa-search"/>
+                    <input
+                        t-ref="input"
+                        class="boostdoo-cp-input"
+                        type="text"
+                        autocomplete="off"
+                        autocorrect="off"
+                        spellcheck="false"
+                        placeholder="Search commands, menus, actions…"
+                        t-att-value="state.query"
+                        t-on-input="_onInput"
+                        t-on-keydown="_onKeyDown"
+                    />
+                    <kbd class="boostdoo-cp-shortcut-hint">ESC</kbd>
+                </div>
+
+                <!-- Results list -->
+                <div class="boostdoo-cp-results" role="listbox">
+
+                    <!-- Loading spinner -->
+                    <t t-if="state.loading">
+                        <div class="boostdoo-cp-spinner">
+                            <span class="fa fa-spinner fa-spin"/>
+                        </div>
+                    </t>
+
+                    <!-- Empty state -->
+                    <t t-elif="state.results.length === 0">
+                        <div class="boostdoo-cp-empty">
+                            <t t-if="state.query">
+                                No results for "<strong t-esc="state.query"/>"
+                            </t>
+                            <t t-else="">
+                                Start typing to search…
+                            </t>
+                        </div>
+                    </t>
+
+                    <!-- Result items -->
+                    <t t-else="">
+                        <t t-foreach="state.results" t-as="result" t-key="result.id">
+                            <div
+                                class="boostdoo-cp-result"
+                                t-att-class="{ 'boostdoo-cp-result--selected': result_index === state.selectedIndex }"
+                                role="option"
+                                t-att-aria-selected="result_index === state.selectedIndex"
+                                t-on-click="() => this._onResultClick(result)"
+                                t-on-mouseenter="() => this._onResultMouseEnter(result_index)"
+                            >
+                                <!-- Category badge -->
+                                <span
+                                    class="boostdoo-cp-badge"
+                                    t-att-class="'boostdoo-cp-badge--' + result.category"
+                                    t-esc="categoryLabels[result.category] || result.category"
+                                />
+
+                                <!-- Main label -->
+                                <span class="boostdoo-cp-result-name" t-esc="result.name"/>
+
+                                <!-- Description -->
+                                <t t-if="result.description">
+                                    <span class="boostdoo-cp-result-description"
+                                          t-esc="result.description"/>
+                                </t>
+
+                                <!-- Keyboard hint for selected item -->
+                                <t t-if="result_index === state.selectedIndex">
+                                    <kbd class="boostdoo-cp-result-kbd">↵</kbd>
+                                </t>
+                            </div>
+                        </t>
+                    </t>
+                </div>
+
+                <!-- Footer -->
+                <div class="boostdoo-cp-footer">
+                    <span>
+                        <kbd>↑</kbd><kbd>↓</kbd> navigate
+                    </span>
+                    <span>
+                        <kbd>↵</kbd> select
+                    </span>
+                    <span>
+                        <kbd>ESC</kbd> close
+                    </span>
+                    <span class="boostdoo-cp-footer-brand">
+                        Boostdoo Command Palette
+                    </span>
+                </div>
+
+            </div>
+        </t>
+    </t>
+
+</templates>

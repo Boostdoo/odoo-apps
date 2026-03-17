@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Boostdoo Command Palette — System Parameters ===== -->
+
+    <record id="param_boostdoo_cp_shortcut" model="ir.config_parameter">
+        <field name="key">boostdoo_command_palette.shortcut</field>
+        <field name="value">ctrl+k</field>
+    </record>
+
+    <record id="param_boostdoo_cp_max_results" model="ir.config_parameter">
+        <field name="key">boostdoo_command_palette.max_results</field>
+        <field name="value">10</field>
+    </record>
+
+    <record id="param_boostdoo_cp_history_retention" model="ir.config_parameter">
+        <field name="key">boostdoo_command_palette.history_retention_days</field>
+        <field name="value">30</field>
+    </record>
+
+    <record id="param_boostdoo_cp_enabled" model="ir.config_parameter">
+        <field name="key">boostdoo_command_palette.enabled</field>
+        <field name="value">True</field>
+    </record>
+
+    <record id="param_boostdoo_cp_fuzzy_threshold" model="ir.config_parameter">
+        <field name="key">boostdoo_command_palette.fuzzy_threshold</field>
+        <field name="value">0.4</field>
+    </record>
+
+    <record id="param_boostdoo_cp_cache_ttl" model="ir.config_parameter">
+        <field name="key">boostdoo_command_palette.cache_ttl_seconds</field>
+        <field name="value">300</field>
+    </record>
+
+</odoo>
