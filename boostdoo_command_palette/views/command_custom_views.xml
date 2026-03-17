@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== boostdoo.command.custom — Form View ===== -->
+    <record id="view_boostdoo_command_custom_form" model="ir.ui.view">
+        <field name="name">boostdoo.command.custom.form</field>
+        <field name="model">boostdoo.command.custom</field>
+        <field name="arch" type="xml">
+            <form string="Custom Command">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+                            invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Command name…"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="description"/>
+                            <field name="action_id"/>
+                            <field name="shortcut" placeholder="e.g. ctrl+shift+p"/>
+                        </group>
+                        <group string="Settings">
+                            <field name="sequence"/>
+                            <field name="active"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group string="Access Groups">
+                        <field name="group_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ===== boostdoo.command.custom — List View ===== -->
+    <record id="view_boostdoo_command_custom_list" model="ir.ui.view">
+        <field name="name">boostdoo.command.custom.list</field>
+        <field name="model">boostdoo.command.custom</field>
+        <field name="arch" type="xml">
+            <list string="Custom Commands" decoration-muted="not active">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="description" optional="show"/>
+                <field name="action_id"/>
+                <field name="shortcut" optional="show"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ===== boostdoo.command.custom — Search View ===== -->
+    <record id="view_boostdoo_command_custom_search" model="ir.ui.view">
+        <field name="name">boostdoo.command.custom.search</field>
+        <field name="model">boostdoo.command.custom</field>
+        <field name="arch" type="xml">
+            <search string="Search Custom Commands">
+                <field name="name" string="Command" filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
+                <field name="action_id"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="My Company" name="my_company"
+                        domain="[('company_id', '=', allowed_company_ids[0])]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Action" name="group_by_action" context="{'group_by': 'action_id'}"/>
+                    <filter string="Company" name="group_by_company" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ===== boostdoo.command.custom — Window Action ===== -->
+    <record id="action_boostdoo_command_custom" model="ir.actions.act_window">
+        <field name="name">Custom Commands</field>
+        <field name="res_model">boostdoo.command.custom</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_boostdoo_command_custom_search"/>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No custom commands yet
+            </p>
+            <p>
+                Create custom commands to extend the Boostdoo Command Palette
+                with your own shortcuts and actions.
+            </p>
+        </field>
+    </record>
+
+    <!-- ===== boostdoo.command.history — List View (read-only) ===== -->
+    <record id="view_boostdoo_command_history_list" model="ir.ui.view">
+        <field name="name">boostdoo.command.history.list</field>
+        <field name="model">boostdoo.command.history</field>
+        <field name="arch" type="xml">
+            <list string="Command History" create="false" delete="false" edit="false">
+                <field name="command_name"/>
+                <field name="command_key"/>
+                <field name="user_id"/>
+                <field name="use_count"/>
+                <field name="last_used"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ===== boostdoo.command.history — Window Action ===== -->
+    <record id="action_boostdoo_command_history" model="ir.actions.act_window">
+        <field name="name">Command History</field>
+        <field name="res_model">boostdoo.command.history</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No command history yet
+            </p>
+            <p>
+                Command usage history will appear here once users start
+                using the Boostdoo Command Palette.
+            </p>
+        </field>
+    </record>
+
+</odoo>

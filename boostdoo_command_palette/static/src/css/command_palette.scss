@@ -1,0 +1,237 @@
+// Copyright 2026 Boostdoo
+
+// ─── Variables ──────────────────────────────────────────────────────────────
+
+$bcp-backdrop-bg:       rgba(0, 0, 0, 0.45);
+$bcp-container-bg:      #ffffff;
+$bcp-container-shadow:  0 20px 60px rgba(0, 0, 0, 0.25);
+$bcp-container-radius:  12px;
+$bcp-container-width:   640px;
+$bcp-container-max-h:   480px;
+
+$bcp-header-height:     56px;
+$bcp-footer-height:     36px;
+
+$bcp-input-color:       #1a1a2e;
+$bcp-input-placeholder: #9099a9;
+
+$bcp-result-hover-bg:   #f0f4ff;
+$bcp-result-active-bg:  #e3ecff;
+$bcp-result-radius:     8px;
+
+$bcp-badge-radius:      4px;
+$bcp-badge-font-size:   0.65rem;
+
+$bcp-brand-purple:      #6c47ff;
+$bcp-brand-blue:        #3a7bfd;
+
+// Category badge colours
+$bcp-cat-favorite:      #f59e0b;
+$bcp-cat-history:       #10b981;
+$bcp-cat-record:        #e11d48;
+$bcp-cat-menu:          #3a7bfd;
+$bcp-cat-custom:        #6c47ff;
+
+// ─── Backdrop ───────────────────────────────────────────────────────────────
+
+.boostdoo-cp-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: $bcp-backdrop-bg;
+    animation: boostdoo-fade-in 0.12s ease;
+}
+
+// ─── Container ──────────────────────────────────────────────────────────────
+
+.boostdoo-cp-container {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    width: $bcp-container-width;
+    max-width: calc(100vw - 32px);
+    max-height: $bcp-container-max-h;
+
+    background: $bcp-container-bg;
+    border-radius: $bcp-container-radius;
+    box-shadow: $bcp-container-shadow;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    animation: boostdoo-slide-down 0.15s ease;
+}
+
+// ─── Header ─────────────────────────────────────────────────────────────────
+
+.boostdoo-cp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    height: $bcp-header-height;
+    border-bottom: 1px solid #e8ecf0;
+    flex-shrink: 0;
+}
+
+.boostdoo-cp-icon {
+    color: $bcp-brand-purple;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.boostdoo-cp-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: $bcp-input-color;
+    background: transparent;
+    caret-color: $bcp-brand-purple;
+
+    &::placeholder {
+        color: $bcp-input-placeholder;
+    }
+}
+
+.boostdoo-cp-shortcut-hint {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    color: #6e7781;
+    background: #f6f8fa;
+    flex-shrink: 0;
+}
+
+// ─── Results ────────────────────────────────────────────────────────────────
+
+.boostdoo-cp-results {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.boostdoo-cp-spinner,
+.boostdoo-cp-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: $bcp-input-placeholder;
+    font-size: 0.9rem;
+}
+
+.boostdoo-cp-result {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: $bcp-result-radius;
+    cursor: pointer;
+    transition: background 0.1s ease;
+
+    &:hover {
+        background: $bcp-result-hover-bg;
+    }
+
+    &--selected {
+        background: $bcp-result-active-bg;
+    }
+}
+
+.boostdoo-cp-result-name {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $bcp-input-color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.boostdoo-cp-result-description {
+    font-size: 0.78rem;
+    color: $bcp-input-placeholder;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.boostdoo-cp-result-kbd {
+    font-size: 0.7rem;
+    padding: 1px 5px;
+    border: 1px solid #d0d7de;
+    border-radius: 3px;
+    color: #6e7781;
+    background: #f6f8fa;
+    flex-shrink: 0;
+}
+
+// ─── Category badges ────────────────────────────────────────────────────────
+
+.boostdoo-cp-badge {
+    font-size: $bcp-badge-font-size;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: $bcp-badge-radius;
+    color: #fff;
+    flex-shrink: 0;
+
+    &--favorite { background: $bcp-cat-favorite; }
+    &--history  { background: $bcp-cat-history;  }
+    &--record   { background: $bcp-cat-record;   }
+    &--menu     { background: $bcp-cat-menu;     }
+    &--custom   { background: $bcp-cat-custom;   }
+}
+
+// ─── Footer ─────────────────────────────────────────────────────────────────
+
+.boostdoo-cp-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px;
+    height: $bcp-footer-height;
+    border-top: 1px solid #e8ecf0;
+    background: #f9fafb;
+    font-size: 0.72rem;
+    color: #6e7781;
+    flex-shrink: 0;
+
+    kbd {
+        padding: 1px 5px;
+        border: 1px solid #d0d7de;
+        border-radius: 3px;
+        background: #fff;
+        font-size: 0.68rem;
+    }
+}
+
+.boostdoo-cp-footer-brand {
+    margin-left: auto;
+    font-weight: 600;
+    background: linear-gradient(90deg, $bcp-brand-purple, $bcp-brand-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// ─── Animations ─────────────────────────────────────────────────────────────
+
+@keyframes boostdoo-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes boostdoo-slide-down {
+    from { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0);     }
+}
