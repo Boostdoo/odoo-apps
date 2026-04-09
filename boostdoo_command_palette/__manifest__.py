@@ -41,7 +41,7 @@ Features:
             'boostdoo_command_palette/static/src/css/command_palette.scss',
         ],
     },
-    'image': 'static/description/banner.png',
+    'images': ['static/description/banner.gif'],
     'installable': True,
     'application': False,
     'auto_install': False,
