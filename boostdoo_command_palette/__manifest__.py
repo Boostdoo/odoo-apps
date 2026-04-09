@@ -2,7 +2,7 @@
 
 {
     'name': 'Boostdoo Command Palette',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
     'summary': 'Global keyboard-driven command palette for fast Odoo navigation',
     'description': """
 Boostdoo Command Palette introduces a global command interface inside Odoo
@@ -19,7 +19,6 @@ Features:
 - Full security compliance (ACL, record rules, multi-company)
     """,
     'author': 'Boostdoo',
-    'website': 'https://boostdoo.com',
     'license': 'OPL-1',
     'category': 'Productivity',
     'depends': ['base', 'web'],
@@ -42,10 +41,11 @@ Features:
             'boostdoo_command_palette/static/src/css/command_palette.scss',
         ],
     },
+    'image': 'static/description/menuitem.png',
     'installable': True,
     'application': False,
     'auto_install': False,
-    'price': 29.99,
+    'price': 9.99,
     'currency': 'EUR',
 
 }
